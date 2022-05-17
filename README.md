@@ -5,7 +5,7 @@ Persian and English documents with LaTeX, using the XeTeX engine.
 The package includes adaptations for use with many other commonly-used 
 packages.
 
-The official versions of the package is released on [CTAN](https://ctan.org/pkg/xepersian).
+The official versions of the package are released on [CTAN](https://ctan.org/pkg/xepersian).
 
 ## Using the Package
 The following example illustrates how the package can be used.
