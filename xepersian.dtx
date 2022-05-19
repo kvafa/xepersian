@@ -243,7 +243,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{10978}
+%% \CheckSum{10970}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -5887,7 +5887,7 @@ indexblock environment may only appear inside frontpage environment.
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{xepersian-mathdigitspec}
-  [2022/02/04 v1.1.9 Unicode Persian math digits in XeLaTeX]
+  [2022/06/01 v1.2.0 Unicode Persian math digits in XeLaTeX]
 \def\new@mathgroup{\alloc@8\mathgroup\chardef\@cclvi}
 \let\newfam\new@mathgroup
 \def\select@group#1#2#3#4{%
@@ -6099,7 +6099,7 @@ indexblock environment may only appear inside frontpage environment.
   \SetMathCode{`8}{\mathalpha}{OPERATORS}{`8}
   \SetMathCode{`9}{\mathalpha}{OPERATORS}{`9}
   \SetMathCode{`\%}{\mathbin}{OPERATORS}{`٪}
-  \SetMathCharDef{\decimalseparator}{\mathord}{OPERATORS}{"066B}
+  \SetMathCharDef{\persiandecimalseparator}{\mathord}{OPERATORS}{"066B}
   \tl_set_eq:NN \mathbf \new@mathbf
   \tl_set_eq:NN \mathit \new@mathit
   \tl_set_eq:NN \mathrm \new@mathrm}
@@ -6138,25 +6138,23 @@ indexblock environment may only appear inside frontpage environment.
 \cs_set_eq:NN \__xepersian_setmathttdigitfont_hook:nn     \use_none:nn
 
 \ExplSyntaxOff
-\ifx\newcommand\undefined\else
-  \newcommand{\ZifferAn}{}
-\fi
-\mathchardef\ziffer@DotOri="013A
-{\ZifferAn
- \catcode`\.=\active\gdef.{\begingroup\obeyspaces\futurelet\n\ziffer@dcheck}}
-\def\ziffer@dcheck{\ziffer@check\ZifferLeer\ziffer@DotOri}
-\def\ziffer@check#1#2{%
-  \ifx\n1\endgroup#1\else
-    \ifx\n2\endgroup#1\else
-      \ifx\n3\endgroup#1\else
-        \ifx\n4\endgroup#1\else
-          \ifx\n5\endgroup#1\else
-            \ifx\n6\endgroup#1\else
-              \ifx\n7\endgroup#1\else
-                \ifx\n8\endgroup#1\else
-                  \ifx\n9\endgroup#1\else
-                    \ifx\n0\endgroup#1\else
-                     \ifx\n\overline\endgroup#1\else
+\mathchardef\decimalseparator@point="013A
+{%
+ \catcode`\.=\active
+ \gdef.{\begingroup\obeyspaces\futurelet\next@token\decimalseparator@dcheck}}
+\def\decimalseparator@dcheck{\decimalseparator@check\MathDecimalSeparator\decimalseparator@point}
+\def\decimalseparator@check#1#2{%
+  \ifx\next@token1\endgroup#1\else
+    \ifx\next@token2\endgroup#1\else
+      \ifx\next@token3\endgroup#1\else
+        \ifx\next@token4\endgroup#1\else
+          \ifx\next@token5\endgroup#1\else
+            \ifx\next@token6\endgroup#1\else
+              \ifx\next@token7\endgroup#1\else
+                \ifx\next@token8\endgroup#1\else
+                  \ifx\next@token9\endgroup#1\else
+                    \ifx\next@token0\endgroup#1\else
+                     \ifx\next@token\overline\endgroup#1\else
                       \endgroup#2%
                     \fi
                   \fi
@@ -6170,8 +6168,8 @@ indexblock environment may only appear inside frontpage environment.
    \fi
  \fi}
 \mathcode`.="8000\relax
-\def\ZifferLeer{\ifx\decimalseparator\undefined .\else \decimalseparator\fi}
-\def\DefaultZifferLeer{.}
+\def\MathDecimalSeparator{\ifx\persiandecimalseparator\undefined .\else \persiandecimalseparator\fi}
+\def\DefaultMathDecimalSeparator{.}
 \def\DefaultInlineMathDigits{\def\SetInlineMathDigits{}}
 \def\DefaultDisplayMathDigits{\def\SetDisplayMathDigits{}}
 \def\DefaultMathDigits{%
@@ -6212,14 +6210,14 @@ indexblock environment may only appear inside frontpage environment.
 }
 
 \ExplSyntaxOn
-\cs_new_eq:NN \orig_ZifferLeer \ZifferLeer
+\cs_new_eq:NN \orig_MathDecimalSeparator \MathDecimalSeparator
 
 \NewDocumentCommand \SwitchToDefaultMathDigits {  } {
   \int_step_inline:nnnn { `0 } { \c_one_int } { `9 } {
     \SetMathCode{##1}{\mathalpha}{operators}{##1}
   }
   \SetMathCode{`\%}{\mathbin}{operators}{`\%}
-  \tl_set_eq:NN \ZifferLeer \DefaultZifferLeer
+  \tl_set_eq:NN \MathDecimalSeparator \DefaultMathDecimalSeparator
   \tl_set_eq:NN \mathbf \orig_mathbf:n
   \tl_set_eq:NN \mathit \orig_mathit:n
   \tl_set_eq:NN \mathrm \orig_mathrm:n
@@ -6232,7 +6230,7 @@ indexblock environment may only appear inside frontpage environment.
     \SetMathCode{##1}{\mathalpha}{OPERATORS}{##1}
   }
   \SetMathCode{`\%}{\mathbin}{OPERATORS}{`٪}
-  \tl_set_eq:NN \ZifferLeer \orig_ZifferLeer
+  \tl_set_eq:NN \MathDecimalSeparator \orig_MathDecimalSeparator
   \tl_set_eq:NN \mathbf \new@mathbf
   \tl_set_eq:NN \mathit \new@mathit
   \tl_set_eq:NN \mathrm \new@mathrm
