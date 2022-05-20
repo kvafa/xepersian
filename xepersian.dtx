@@ -31,7 +31,7 @@ also appear in the Discussions space under the Announcements
 category.
   
   
-Current version release date: 2022/06/01
+Current version release date: 2022/05/20
 ___________________________________________
 Vafa Khalighi
 
@@ -243,7 +243,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{10970}
+%% \CheckSum{10976}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -3475,7 +3475,7 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
 \def\xepersian@version{23.8}
-\def\xepersiandate{2022/06/01}
+\def\xepersiandate{2022/05/20}
 \ProvidesPackage{xepersian}[\xepersiandate\space v\xepersian@version\space 
 Persian typesetting in XeLaTeX]
 \RequirePackage{fontspec}
@@ -4324,7 +4324,7 @@ Persian typesetting in XeLaTeX]
 
 \newcommand*{\@xepersian@pdfcustomproperties}{%
   This is the xepersian package, Version \xepersian@version,
-  Released June 1, 2022. 
+  Released May 20, 2022. 
 }
 
 \newcommand\twocolumnstableofcontents{%
@@ -5887,7 +5887,7 @@ indexblock environment may only appear inside frontpage environment.
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{xepersian-mathdigitspec}
-  [2022/06/01 v1.2.0 Unicode Persian math digits in XeLaTeX]
+  [2022/05/20 v1.2.0 Unicode Persian math digits in XeLaTeX]
 \def\new@mathgroup{\alloc@8\mathgroup\chardef\@cclvi}
 \let\newfam\new@mathgroup
 \def\select@group#1#2#3#4{%
@@ -6141,31 +6141,35 @@ indexblock environment may only appear inside frontpage environment.
 \mathchardef\decimalseparator@point="013A
 {%
  \catcode`\.=\active
- \gdef.{\begingroup\obeyspaces\futurelet\next@token\decimalseparator@pointcheck}}
+ \gdef.{\begingroup\obeyspaces\futurelet\@let@token\decimalseparator@pointcheck}}
 \def\decimalseparator@pointcheck{\decimalseparator@check\MathDecimalSeparator\decimalseparator@point}
 \def\decimalseparator@check#1#2{%
-  \ifx\next@token1\endgroup#1\else
-    \ifx\next@token2\endgroup#1\else
-      \ifx\next@token3\endgroup#1\else
-        \ifx\next@token4\endgroup#1\else
-          \ifx\next@token5\endgroup#1\else
-            \ifx\next@token6\endgroup#1\else
-              \ifx\next@token7\endgroup#1\else
-                \ifx\next@token8\endgroup#1\else
-                  \ifx\next@token9\endgroup#1\else
-                    \ifx\next@token0\endgroup#1\else
-                     \ifx\next@token\overline\endgroup#1\else
-                      \endgroup#2%
-                    \fi
-                  \fi
-                \fi
-              \fi
-            \fi
-          \fi
-        \fi
-      \fi
-    \fi
-   \fi
+  \ifx\@let@token\@sptoken
+    \endgroup#2%
+  \else
+    \endgroup#1%
+%  \ifx\@let@token1\endgroup#1\else
+%    \ifx\@let@token2\endgroup#1\else
+%      \ifx\@let@token3\endgroup#1\else
+%        \ifx\@let@token4\endgroup#1\else
+%          \ifx\@let@token5\endgroup#1\else
+%            \ifx\@let@token6\endgroup#1\else
+%              \ifx\@let@token7\endgroup#1\else
+%                \ifx\@let@token8\endgroup#1\else
+%                  \ifx\@let@token9\endgroup#1\else
+%                    \ifx\@let@token0\endgroup#1\else
+%                     \ifx\@let@token\overline\endgroup#1\else
+%                      \endgroup#2%
+%                    \fi
+%                  \fi
+%                \fi
+%              \fi
+%            \fi
+%          \fi
+%        \fi
+%      \fi
+%    \fi
+%   \fi
  \fi}
 \mathcode`.="8000\relax
 \def\MathDecimalSeparator{\ifx\persiandecimalseparator\undefined .\else \persiandecimalseparator\fi}
