@@ -5,7 +5,7 @@
 %<*readme>
 ____________________
 The XePersian package
-v23.8
+v23.9
 
 The xepersian package provides a convenient interface for 
 typesetting Persian and English texts in LaTeX, using XeTeX 
@@ -166,7 +166,7 @@ by Vafa Khalighi.
 \documentclass{ltxdoc}
 \input{xepersian-doc-preamble.ltx}
 \hypersetup{%
-  pdftitle={Source documentation for version 23.8 of the XePersian
+  pdftitle={Source documentation for version 23.9 of the XePersian
                 package}%
 }
 \EnableCrossrefs
@@ -185,7 +185,7 @@ by Vafa Khalighi.
 % \GetFileInfo{\jobname.dtx}
 % \title{\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}\\
 %\LARGE Persian for \LaTeXe, using {\XeTeX} engine\\[5pt]
-%\large Source documentation for \textcolor{blue!65!black}{version 23.8}}
+%\large Source documentation for \textcolor{blue!65!black}{version 23.9}}
 % \author{Vafa Khalighi\thanks{Thanks to the bidi-tex GitHub organization consisted of David Carlisle and other members of the  {\LaTeX} team to maintain the package in the period 2018--2020.}}
 %\setcounter{page}{0}
 %\thispagestyle{empty}
@@ -195,7 +195,7 @@ by Vafa Khalighi.
 %\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}
 %
 %\Large
-%Source documentation for \textcolor{blue!65!black}{version 23.8}}
+%Source documentation for \textcolor{blue!65!black}{version 23.9}}
 %
 %\vskip 0pt plus 3fill
 %\textit{\large to my Master, \textbf{Ferdowsi The Great}}
@@ -3474,7 +3474,7 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 % \section{File \texttt{xepersian.sty}}
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
-\def\xepersian@version{23.8}
+\def\xepersian@version{23.9}
 \def\xepersiandate{2022/05/20}
 \ProvidesPackage{xepersian}[\xepersiandate\space v\xepersian@version\space 
 Persian typesetting in XeLaTeX]
@@ -6144,32 +6144,30 @@ indexblock environment may only appear inside frontpage environment.
  \gdef.{\begingroup\obeyspaces\futurelet\@let@token\decimalseparator@pointcheck}}
 \def\decimalseparator@pointcheck{\decimalseparator@check\MathDecimalSeparator\decimalseparator@point}
 \def\decimalseparator@check#1#2{%
-  \ifx\@let@token\@sptoken
-    \endgroup#2%
-  \else
-    \endgroup#1%
-%  \ifx\@let@token1\endgroup#1\else
-%    \ifx\@let@token2\endgroup#1\else
-%      \ifx\@let@token3\endgroup#1\else
-%        \ifx\@let@token4\endgroup#1\else
-%          \ifx\@let@token5\endgroup#1\else
-%            \ifx\@let@token6\endgroup#1\else
-%              \ifx\@let@token7\endgroup#1\else
-%                \ifx\@let@token8\endgroup#1\else
-%                  \ifx\@let@token9\endgroup#1\else
-%                    \ifx\@let@token0\endgroup#1\else
-%                     \ifx\@let@token\overline\endgroup#1\else
-%                      \endgroup#2%
-%                    \fi
-%                  \fi
-%                \fi
-%              \fi
-%            \fi
-%          \fi
-%        \fi
-%      \fi
-%    \fi
-%   \fi
+  \ifx\@let@token1\endgroup#1\else
+    \ifx\@let@token2\endgroup#1\else
+      \ifx\@let@token3\endgroup#1\else
+        \ifx\@let@token4\endgroup#1\else
+          \ifx\@let@token5\endgroup#1\else
+            \ifx\@let@token6\endgroup#1\else
+              \ifx\@let@token7\endgroup#1\else
+                \ifx\@let@token8\endgroup#1\else
+                  \ifx\@let@token9\endgroup#1\else
+                    \ifx\@let@token0\endgroup#1\else
+                     \ifx\@let@token\dot\endgroup#1\else
+                       \ifx\@let@token\overline\endgroup#1\else
+                         \endgroup#2%
+                       \fi
+                    \fi
+                  \fi
+                \fi
+              \fi
+            \fi
+          \fi
+        \fi
+      \fi
+    \fi
+   \fi
  \fi}
 \mathcode`.="8000\relax
 \def\MathDecimalSeparator{\ifx\persiandecimalseparator\undefined .\else \persiandecimalseparator\fi}
