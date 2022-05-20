@@ -6141,8 +6141,8 @@ indexblock environment may only appear inside frontpage environment.
 \mathchardef\decimalseparator@point="013A
 {%
  \catcode`\.=\active
- \gdef.{\begingroup\obeyspaces\futurelet\next@token\decimalseparator@dcheck}}
-\def\decimalseparator@dcheck{\decimalseparator@check\MathDecimalSeparator\decimalseparator@point}
+ \gdef.{\begingroup\obeyspaces\futurelet\next@token\decimalseparator@pointcheck}}
+\def\decimalseparator@pointcheck{\decimalseparator@check\MathDecimalSeparator\decimalseparator@point}
 \def\decimalseparator@check#1#2{%
   \ifx\next@token1\endgroup#1\else
     \ifx\next@token2\endgroup#1\else
