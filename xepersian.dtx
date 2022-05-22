@@ -243,7 +243,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11096}
+%% \CheckSum{11097}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -4402,25 +4402,27 @@ Persian typesetting in XeLaTeX]
   \end{multicols}}}
 \bidi@newrobustcmd*{\XePersian}{\leavevmode$\smash{\hbox{X\lower.5ex
   \hbox{\kern-.125em\bidi@reflect@box{E}}Persian}}$}
-\def\figurename{\if@RTL شکل\else Figure\fi}
-\def\tablename{\if@RTL جدول\else Table\fi}
-\def\contentsname{\if@RTL فهرست مطالب\else Contents\fi}
-\def\listfigurename{\if@RTL فهرست تصاویر\else List of Figures\fi}
-\def\listtablename{\if@RTL فهرست جداول\else List of Tables\fi}
-\def\appendixname{\if@RTL پیوست\else Appendix\fi}
-\def\indexname{\if@RTL نمایه\else Index\fi}
-\def\refname{\if@RTL مراجع\else References\fi}
-\def\abstractname{\if@RTL چکیده\else Abstract\fi}
-\def\partname{\if@RTL بخش\else Part\fi}
-\def\datename{\if@RTL تاریخ:\else Date:\fi}
-\def\@@and{\if@RTL و\else and\fi}
-\def\bibname{\if@RTL کتاب‌نامه\else Bibliography\fi}
-\def\chaptername{\if@RTL فصل\else Chapter\fi}
-\def\ccname{\if@RTL رونوشت\else cc\fi}
-\def\enclname{\if@RTL پیوست\else encl\fi}
-\def\pagename{\if@RTL صفحه\else Page\fi}
-\def\headtoname{\if@RTL به\else To\fi}
-\def\proofname{\if@RTL اثبات\else Proof\fi}
+\AtBeginDocument{%
+  \def\figurename{\if@RTL شکل\else Figure\fi}%
+  \def\tablename{\if@RTL جدول\else Table\fi}%
+  \def\contentsname{\if@RTL فهرست مطالب\else Contents\fi}%
+  \def\listfigurename{\if@RTL فهرست تصاویر\else List of Figures\fi}%
+  \def\listtablename{\if@RTL فهرست جداول\else List of Tables\fi}%
+  \def\appendixname{\if@RTL پیوست\else Appendix\fi}%
+  \def\indexname{\if@RTL نمایه\else Index\fi}%
+  \def\refname{\if@RTL مراجع\else References\fi}%
+  \def\abstractname{\if@RTL چکیده\else Abstract\fi}%
+  \def\partname{\if@RTL بخش\else Part\fi}%
+  \def\datename{\if@RTL تاریخ:\else Date:\fi}%
+  \def\@@and{\if@RTL و\else and\fi}%
+  \def\bibname{\if@RTL کتاب‌نامه\else Bibliography\fi}%
+  \def\chaptername{\if@RTL فصل\else Chapter\fi}%
+  \def\ccname{\if@RTL رونوشت\else cc\fi}%
+  \def\enclname{\if@RTL پیوست\else encl\fi}%
+  \def\pagename{\if@RTL صفحه\else Page\fi}%
+  \def\headtoname{\if@RTL به\else To\fi}%
+  \def\proofname{\if@RTL اثبات\else Proof\fi}%
+}
 \def\@Abjad#1{%
   \ifcase#1\or آ\or ب\or ج\or د%
            \or ه\or و\or ز\or ح\or ط%
