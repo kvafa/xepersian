@@ -243,7 +243,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{10976}
+%% \CheckSum{11096}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -3218,14 +3218,36 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 %\fi
 % \section{File \texttt{scrartcl-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{scrartcl-xepersian.def}[2010/07/25 v0.2 adaptations for scrartcl class]
+\ProvidesFile{scrartcl-xepersian.def}[2022/06/01 v0.3 adaptations for scrartcl class]
 \renewcommand*{\thepart}{\@tartibi\c@part}
-\renewcommand*\appendix{\par%
+\renewcommand*\appendix{%
+  \Ifstr{\@currenvir}{appendix}{%
+    \ClassWarning{\KOMAClassName}{%
+      You are using
+      `\string\begin{appendix}...\string\end{appendix}'.\MessageBreak
+      You should note, that `\string\appendix' is a mostly
+      globally\MessageBreak
+      working command not an enviroment with only local\MessageBreak
+      effects. Therefore `\string\end{appendix}' will neither\MessageBreak
+      switch back to normal section numbering nor finish\MessageBreak
+      every other effect of `\string\begin{appendix}'.\MessageBreak
+      Nevertheless, some effects may end with\MessageBreak
+      `\string\end{appendix}' and the document may become\MessageBreak
+      inconsistent.\MessageBreak
+      Because of this, you should remove `\string\end{appendix}'\MessageBreak
+      and replace `\string\begin{appendix}' by command\MessageBreak
+      `\string\appendix'%
+    }%
+  }{}%
+  \par
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
   \gdef\thesection{\@harfi\c@section}%
-  \csname appendixmore\endcsname
 }
+\IfLTXAtLeastTF{2020/10/01}{%
+  \g@addto@macro{\appendix}{\UseOneTimeHook{\KOMAClassName/appendix}}%
+}{}
+\g@addto@macro{\appendix}{\csname appendixmore\endcsname}
 \renewcommand*{\@@maybeautodot}[1]{%
   \ifx #1\@stop\let\@@maybeautodot\relax
   \else
@@ -3254,19 +3276,41 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 %\fi
 % \section{File \texttt{scrbook-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{scrbook-xepersian.def}[2010/07/25 v0.2 adaptations for scrbook class]
+\ProvidesFile{scrbook-xepersian.def}[2022/06/01 v0.3 adaptations for scrbook class]
 \renewcommand*\frontmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
   \@mainmatterfalse\pagenumbering{harfi}%
 }
 \renewcommand*{\thepart}{\@tartibi\c@part}
-\renewcommand*\appendix{\par%
+\renewcommand*\appendix{%
+  \Ifstr{\@currenvir}{appendix}{%
+    \ClassWarning{\KOMAClassName}{%
+      You are using
+      `\string\begin{appendix}...\string\end{appendix}'.\MessageBreak
+      You should note, that `\string\appendix' is a mostly
+      globally\MessageBreak
+      working command not an enviroment with only local\MessageBreak
+      effects. Therefore `\string\end{appendix}' will neither\MessageBreak
+      switch back to normal section numbering nor finish\MessageBreak
+      every other effect of `\string\begin{appendix}'.\MessageBreak
+      Nevertheless, some effects may end with\MessageBreak
+      `\string\end{appendix}' and the document may become\MessageBreak
+      inconsistent.\MessageBreak
+      Because of this, you should remove `\string\end{appendix}'\MessageBreak
+      and replace `\string\begin{appendix}' by command\MessageBreak
+      `\string\appendix'%
+    }%
+  }{}%
+  \par
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   \gdef\@chapapp{\appendixname}%
   \gdef\thechapter{\@harfi\c@chapter}%
-  \csname appendixmore\endcsname
 }
+\IfLTXAtLeastTF{2020/10/01}{%
+  \g@addto@macro{\appendix}{\UseOneTimeHook{\KOMAClassName/appendix}}%
+}{}
+\g@addto@macro{\appendix}{\csname appendixmore\endcsname}
 \renewcommand*{\@@maybeautodot}[1]{%
   \ifx #1\@stop\let\@@maybeautodot\relax
   \else
@@ -3295,15 +3339,37 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 %\fi
 % \section{File \texttt{scrreprt-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{scrreprt-xepersian.def}[2010/07/25 v0.2 adaptations for scrreprt class]
+\ProvidesFile{scrreprt-xepersian.def}[2022/06/01 v0.3 adaptations for scrreprt class]
 \renewcommand*{\thepart}{\@tartibi\c@part}
-\renewcommand*\appendix{\par%
+\renewcommand*\appendix{%
+  \Ifstr{\@currenvir}{appendix}{%
+    \ClassWarning{\KOMAClassName}{%
+      You are using
+      `\string\begin{appendix}...\string\end{appendix}'.\MessageBreak
+      You should note, that `\string\appendix' is a mostly
+      globally\MessageBreak
+      working command not an enviroment with only local\MessageBreak
+      effects. Therefore `\string\end{appendix}' will neither\MessageBreak
+      switch back to normal section numbering nor finish\MessageBreak
+      every other effect of `\string\begin{appendix}'.\MessageBreak
+      Nevertheless, some effects may end with\MessageBreak
+      `\string\end{appendix}' and the document may become\MessageBreak
+      inconsistent.\MessageBreak
+      Because of this, you should remove `\string\end{appendix}'\MessageBreak
+      and replace `\string\begin{appendix}' by command\MessageBreak
+      `\string\appendix'%
+    }%
+  }{}%
+  \par
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   \gdef\@chapapp{\appendixname}%
   \gdef\thechapter{\@harfi\c@chapter}%
-  \csname appendixmore\endcsname
 }
+\IfLTXAtLeastTF{2020/10/01}{%
+  \g@addto@macro{\appendix}{\UseOneTimeHook{\KOMAClassName/appendix}}%
+}{}
+\g@addto@macro{\appendix}{\csname appendixmore\endcsname}
 \renewcommand*{\@@maybeautodot}[1]{%
   \ifx #1\@stop\let\@@maybeautodot\relax
   \else
