@@ -83,6 +83,7 @@ by Vafa Khalighi.
 \generate{\file{artikel2-xepersian.def}{\from{\jobname.dtx}{table,artikel2-xepersian.def}}}
 \generate{\file{artikel3-xepersian.def}{\from{\jobname.dtx}{table,artikel3-xepersian.def}}}
 \generate{\file{backref-xepersian.def}{\from{\jobname.dtx}{table,backref-xepersian.def}}}
+\generate{\file{beamer-xepersian.def}{\from{\jobname.dtx}{table,beamer-xepersian.def}}}
 \generate{\file{bidituftesidenote-xepersian.def}{\from{\jobname.dtx}{table,bidituftesidenote-xepersian.def}}}
 \generate{\file{bidimoderncv-xepersian.def}{\from{\jobname.dtx}{table,bidimoderncv-xepersian.def}}}
 \generate{\file{boek3-xepersian.def}{\from{\jobname.dtx}{table,boek3-xepersian.def}}}
@@ -243,7 +244,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11097}
+%% \CheckSum{11101}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -416,6 +417,15 @@ by Vafa Khalighi.
 %    \end{macrocode}
 % \iffalse
 %</backref-xepersian.def>
+%<*beamer-xepersian.def>
+%\fi
+% \section{File \texttt{beamer-xepersian.def}}
+%    \begin{macrocode}
+\ProvidesFile{beamer-xepersian.def}[2022/06/01 v0.1 xepersian changes to beamer class]
+\usefonttheme[stillsansserifmath]{serif}
+%    \end{macrocode}
+% \iffalse
+%</beamer-xepersian.def>
 %<*bidituftesidenote-xepersian.def>
 %\fi
 % \section{File \texttt{bidituftesidenote-xepersian.def}}
@@ -4732,6 +4742,7 @@ number is 999,999,999.}%
 \@ifclassloaded{artikel2}{\input{artikel2-xepersian.def}}{}
 \@ifclassloaded{artikel3}{\input{artikel3-xepersian.def}}{}
 \@ifclassloaded{amsart}{\input{amsart-xepersian.def}}{}
+\@ifclassloaded{beamer}{\input{beamer-xepersian.def}}{}
 \@ifclassloaded{bidimoderncv}{\input{bidimoderncv-xepersian.def}}{}
 \@ifclassloaded{report}{\input{report-xepersian.def}}{}
 \@ifclassloaded{extreport}{\input{extreport-xepersian.def}}{}
