@@ -84,6 +84,7 @@ by Vafa Khalighi.
 \generate{\file{artikel3-xepersian.def}{\from{\jobname.dtx}{table,artikel3-xepersian.def}}}
 \generate{\file{backref-xepersian.def}{\from{\jobname.dtx}{table,backref-xepersian.def}}}
 \generate{\file{beamer-xepersian.def}{\from{\jobname.dtx}{table,beamer-xepersian.def}}}
+\generate{\file{beamerbasetranslator-xepersian.def}{\from{\jobname.dtx}{table,beamerbasetranslator-xepersian.def}}}
 \generate{\file{bidituftesidenote-xepersian.def}{\from{\jobname.dtx}{table,bidituftesidenote-xepersian.def}}}
 \generate{\file{bidimoderncv-xepersian.def}{\from{\jobname.dtx}{table,bidimoderncv-xepersian.def}}}
 \generate{\file{boek3-xepersian.def}{\from{\jobname.dtx}{table,boek3-xepersian.def}}}
@@ -244,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11101}
+%% \CheckSum{11118}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -426,6 +427,30 @@ by Vafa Khalighi.
 %    \end{macrocode}
 % \iffalse
 %</beamer-xepersian.def>
+%<*beamerbasetranslator-xepersian.def>
+%\fi
+% \section{File \texttt{beamerbasetranslator-xepersian.def}}
+%    \begin{macrocode}
+\ProvidesFile{beamerbasetranslator-xepersian.def}[2022/06/01 v0.1 xepersian changes to beamerbasetranslator package]
+\newcommand*{\ProvideTranslation}[2]{%
+  \providetranslation{#1}{\ifRtoL{#2}{#1}}%
+}
+
+\ProvideTranslation{Theorem}{قضیه}
+\ProvideTranslation{Corollary}{نتیجه}
+\ProvideTranslation{Fact}{حقیقت}
+\ProvideTranslation{Lemma}{لما}
+\ProvideTranslation{Problem}{مساله}
+\ProvideTranslation{Solution}{راه‌حل}
+\ProvideTranslation{Definition}{تعریف}
+\ProvideTranslation{Definitions}{تعریف‌ها}
+\ProvideTranslation{Example}{مثال}
+\ProvideTranslation{Examples}{مثال‌ها}
+
+
+%    \end{macrocode}
+% \iffalse
+%</beamerbasetranslator-xepersian.def>
 %<*bidituftesidenote-xepersian.def>
 %\fi
 % \section{File \texttt{bidituftesidenote-xepersian.def}}
@@ -4721,6 +4746,7 @@ number is 999,999,999.}%
 \@ifpackageloaded{algorithmic}{\input{algorithmic-xepersian.def}}{}
 \@ifpackageloaded{algorithm}{\input{algorithm-xepersian.def}}{}
 \@ifpackageloaded{backref}{\input{backref-xepersian.def}}{}
+\@ifpackageloaded{beamerbasetranslator}{\input{beamerbasetranslator-xepersian.def}}{}
 \@ifpackageloaded{fancyref}{\input{fancyref-xepersian.def}}{}
 \@ifpackageloaded{bidituftesidenote}{\input{bidituftesidenote-xepersian.def}}{}
 \@ifpackageloaded{breqn}{\input{breqn-xepersian.def}}{}
