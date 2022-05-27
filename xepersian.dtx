@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11118}
+%% \CheckSum{11130}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -6244,9 +6244,14 @@ indexblock environment may only appear inside frontpage environment.
 
 \ExplSyntaxOff
 \mathchardef\decimalseparator@point="013A
-{%
- \catcode`\.=\active
- \gdef.{\begingroup\obeyspaces\futurelet\@let@token\decimalseparator@pointcheck}}
+%{%
+% \catcode`\.=\active
+% \gdef.{\begingroup\obeyspaces\futurelet\@let@token\decimalseparator@pointcheck}}
+\bgroup
+  \uccode`\~`\.%
+  \uppercase{%
+\egroup
+  \def~}{\begingroup\obeyspaces\futurelet\@let@token\decimalseparator@pointcheck}
 \def\decimalseparator@pointcheck{\decimalseparator@check\MathDecimalSeparator\decimalseparator@point}
 \def\decimalseparator@check#1#2{%
   \ifx\@let@token1\endgroup#1\else
