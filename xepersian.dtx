@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11130}
+%% \CheckSum{11133}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -1673,14 +1673,14 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{latex-localise-environments-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{latex-localise-environments-xepersian.def}[2010/07/25 v0.2 Persian localisation of LaTeX2e environments]
+\ProvidesFile{latex-localise-environments-xepersian.def}[2022/07/07 v0.3 Persian localisation of LaTeX2e environments]
 \eqenvironment{چکیده}{abstract}
 \eqenvironment{پیوست}{appendix}
 \eqenvironment{آرایه}{array}
 \eqenvironment{وسط‌چین}{center}
 \eqenvironment{توضیح}{description}
 \eqenvironment{ریاضی‌نمایشی}{displaymath}
-\eqenvironment{نوشتار}{document}
+\newenvironment{نوشتار}{\endgroup\document}{\enddocument}
 \eqenvironment{شمارش}{enumerate}
 \eqenvironment{شکل}{figure}
 \eqenvironment{شکل*}{figure*}
