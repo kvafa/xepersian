@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11146}
+%% \CheckSum{11150}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -2223,7 +2223,8 @@ by Vafa Khalighi.
 \newcommand{\makezwnjletter}{\catcode`‌=11\relax}
 \makezwnjletter
 \newcommand*{\eqcommand}[2]{\if@bidi@csprimitive{#2}{\bidi@csletcs{#1}{#2}}{\bidi@csdefcs{#1}{#2}}}
-\newcommand*{\eqenvironment}[2]{\newenvironment{#1}{\csname#2\endcsname}{\csname end#2\endcsname}}
+\newcommand*{\eqenvironment}[2]{\newenvironment{#1}{%
+\if@bidi@csdef{verbatim@}{\let\verbatim@\xepersian@localize@verbatim@}{}\csname#2\endcsname}{\csname end#2\endcsname}}
 \newcommand*{\EqEnvironment}[2]{%
   \expandafter\let\csname #1\expandafter\endcsname\csname #2\endcsname
   \expandafter\let\csname end#1\expandafter\endcsname\csname end#2\endcsname
