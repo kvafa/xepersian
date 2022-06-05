@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11133}
+%% \CheckSum{11146}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -1680,7 +1680,7 @@ by Vafa Khalighi.
 \eqenvironment{وسط‌چین}{center}
 \eqenvironment{توضیح}{description}
 \eqenvironment{ریاضی‌نمایشی}{displaymath}
-\newenvironment{نوشتار}{\endgroup\document}{\enddocument}
+\EqEnvironment{نوشتار}{document}
 \eqenvironment{شمارش}{enumerate}
 \eqenvironment{شکل}{figure}
 \eqenvironment{شکل*}{figure*}
@@ -2219,11 +2219,15 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{localise-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{localise-xepersian.def}[2014/07/10 v0.2b Persian localisation of LaTeX2e]
+\ProvidesFile{localise-xepersian.def}[2022/07/07 v0.2c Persian localisation of LaTeX2e]
 \newcommand{\makezwnjletter}{\catcode`‌=11\relax}
 \makezwnjletter
 \newcommand*{\eqcommand}[2]{\if@bidi@csprimitive{#2}{\bidi@csletcs{#1}{#2}}{\bidi@csdefcs{#1}{#2}}}
 \newcommand*{\eqenvironment}[2]{\newenvironment{#1}{\csname#2\endcsname}{\csname end#2\endcsname}}
+\newcommand*{\EqEnvironment}[2]{%
+  \expandafter\let\csname #1\expandafter\endcsname\csname #2\endcsname
+  \expandafter\let\csname end#1\expandafter\endcsname\csname end#2\endcsname
+}
 \@ifpackageloaded{keyval}{%
 \newcommand*\keyval@eq@alias@key[4][KV]{%
   \bidi@csletcs{#1@#2@#3}{#1@#2@#4}%
