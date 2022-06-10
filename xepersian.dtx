@@ -5,7 +5,7 @@
 %<*readme>
 ____________________
 The XePersian package
-v24.4
+v24.5
 
 The xepersian package provides a convenient interface for 
 typesetting Persian and English texts in LaTeX, using XeTeX 
@@ -31,7 +31,7 @@ also appear in the Discussions space under the Announcements
 category.
   
   
-Current version release date: 2022/06/09
+Current version release date: 2022/06/10
 ___________________________________________
 Vafa Khalighi
 
@@ -168,7 +168,7 @@ by Vafa Khalighi.
 \documentclass{ltxdoc}
 \input{xepersian-doc-preamble.ltx}
 \hypersetup{%
-  pdftitle={Source documentation for version 24.4 of the XePersian
+  pdftitle={Source documentation for version 24.5 of the XePersian
                 package}%
 }
 \EnableCrossrefs
@@ -187,7 +187,7 @@ by Vafa Khalighi.
 % \GetFileInfo{\jobname.dtx}
 % \title{\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}\\
 %\LARGE Persian for \LaTeXe, using {\XeTeX} engine\\[5pt]
-%\large Source documentation for \textcolor{blue!65!black}{version 24.4}}
+%\large Source documentation for \textcolor{blue!65!black}{version 24.5}}
 % \author{Vafa Khalighi\thanks{Thanks to the bidi-tex GitHub organization consisted of David Carlisle and other members of the  {\LaTeX} team to maintain the package in the period 2018--2020.}}
 %\setcounter{page}{0}
 %\thispagestyle{empty}
@@ -197,7 +197,7 @@ by Vafa Khalighi.
 %\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}
 %
 %\Large
-%Source documentation for \textcolor{blue!65!black}{version 24.4}}
+%Source documentation for \textcolor{blue!65!black}{version 24.5}}
 %
 %\vskip 0pt plus 3fill
 %\textit{\large to my Master, \textbf{Ferdowsi The Great}}
@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11153}
+%% \CheckSum{11155}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -2014,7 +2014,7 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{hyperref-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{hyperref-xepersian.def}[2015/02/02 v0.6 bilingual captions for hyperref package]
+\ProvidesFile{hyperref-xepersian.def}[2022/06/10 v0.7 xepersian adaptations for hyperref package]
   \def\equationautorefname{\if@RTL معادله\else Equation\fi}%
   \def\footnoteautorefname{\if@RTL زیرنویس\else footnote\fi}%
   \def\itemautorefname{\if@RTL فقره\else item\fi}%
@@ -2031,16 +2031,18 @@ by Vafa Khalighi.
   \def\FancyVerbLineautorefname{\if@RTL سطر\else line\fi}%
   \def\theoremautorefname{\if@RTL قضیه\else Theorem\fi}%
   \def\pageautorefname{\if@RTL صفحه\else page\fi}%
-\AtBeginDocument{%
-\let\HyOrg@appendix\appendix
-\def\appendix{%
-  \ltx@IfUndefined{chapter}%
-    {\gdef\theHsection{\Alph{section}}}%
-    {\gdef\theHchapter{\Alph{chapter}}}%
-  \xdef\Hy@chapapp{\Hy@appendixstring}%
-  \HyOrg@appendix
-}
-}
+\ifHy@implicit
+  \AtBeginDocument{%
+    \let\HyOrg@appendix\appendix
+      \def\appendix{%
+        \ltx@IfUndefined{chapter}%
+          {\gdef\theHsection{\Alph{section}}}%
+          {\gdef\theHchapter{\Alph{chapter}}}%
+        \xdef\Hy@chapapp{\Hy@appendixstring}%
+        \HyOrg@appendix
+      }%
+    }%
+\fi
 \pdfstringdefDisableCommands{%
 \let\lr\@firstofone
 \let\rl\@firstofone
@@ -3583,8 +3585,8 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 % \section{File \texttt{xepersian.sty}}
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
-\def\xepersian@version{24.4}
-\def\xepersiandate{2022/06/09}
+\def\xepersian@version{24.5}
+\def\xepersiandate{2022/06/10}
 \ProvidesPackage{xepersian}[\xepersiandate\space v\xepersian@version\space 
 Persian typesetting in XeLaTeX]
 \RequirePackage{fontspec}
@@ -4433,7 +4435,7 @@ Persian typesetting in XeLaTeX]
 
 \newcommand*{\@xepersian@pdfcustomproperties}{%
   This is the xepersian package, Version \xepersian@version,
-  Released June 9, 2022. 
+  Released June 10, 2022. 
 }
 
 \newcommand\twocolumnstableofcontents{%
