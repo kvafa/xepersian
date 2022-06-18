@@ -17,7 +17,7 @@ When loading the package, it is important to know that:
 If you load \textsf{\XePersian} before any of these packages, then you will get an error saying that you should load \textsf{\XePersian} or \textsf{bidi} as your last package. When it says that you should load \textsf{bidi} package as your last package, it really means that you should load \textsf{\XePersian} as your last package  as \textsf{bidi} package is loaded automatically by \textsf{\XePersian} package.
 
 For instance, consider the following minimal example:
-\begin{lstlisting}[morekeywords={settextfont}]
+\begin{lstlisting}
 \documentclass{minimal}
 \usepackage{xepersian}
 \usepackage{enumerate}
@@ -50,7 +50,7 @@ l.5 \begin{document}
 \item \Lcs{xepersianversion} gives the current version of the package.
 \item \Lcs{xepersiandate} gives the current date of the package.
 \end{itemize}
-\begin{lstlisting}[morekeywords={settextfont,XePersian,xepersianversion,xepersiandate}]
+\begin{lstlisting}
 \documentclass{article}
 \usepackage{xepersian}
 \settextfont{XB Niloofar}
@@ -1374,7 +1374,7 @@ The equivalent Persian font features and font feature options is shown in \autor
 \end{supertabular}
 \end{center}
 \subsection{A Sample Input \TeX\ File}
-\begin{lstlisting}[morekeywords={settextfont,maketitle,tableofcontents,subsection,subsubsection,part}]
+\begin{lstlisting}
 \documentclass{article}
 \usepackage{xepersian}
 \settextfont{XB Niloofar}
@@ -1417,12 +1417,12 @@ The equivalent Persian font features and font feature options is shown in \autor
 \end{BDef}
 \begin{itemize}
 \item With \Lcs{defpersianfont}, you can define extra Persian fonts.
-\begin{lstlisting}[numbers=none,morekeywords={defpersianfont,Nastaliq}]
+\begin{lstlisting}[numbers=none]
 \defpersianfont\Nastaliq[Scale=1]{IranNastaliq}
 \end{lstlisting}
 In this example, we define \Lcs{Nastaliq} to stand for IranNastaliq font.
 \item With \Lcs{deflatinfont}, you can define extra Latin fonts.
-\begin{lstlisting}[numbers=none,morekeywords={deflatinfont,junicode}]
+\begin{lstlisting}[numbers=none]
 \deflatinfont\junicode[Scale=1]{Junicode}
 \end{lstlisting}
 In this example, we define \Lcs{junicode} to stand for Junicode font.

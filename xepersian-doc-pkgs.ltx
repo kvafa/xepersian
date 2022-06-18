@@ -263,7 +263,7 @@ The available options are described along the text,
 where appropriate.
 \subsubsection{Creating Questions}
 Here's a simple example demonstrating how to produce a new question:
-\begin{lstlisting}[morekeywords={false,true}]
+\begin{lstlisting}
 \begin{question}{*\parsitext{سؤال}*}
 \false *\parsitext{جواب ۱}*
 \true *\parsitext{جواب ۲}*
@@ -381,7 +381,7 @@ arrow are used. You can change these symbols by using the \Lcs{truesymbol} and
 \Lcs{falsesymbol} macros. For instance, you could give a fancier look to your correction
 by using the \textsf{pifont} package and issuing:
 
-\begin{lstlisting}[numbers=none,morekeywords={truesymbol,ding,falsesymbol}]
+\begin{lstlisting}[numbers=none]
 \truesymbol{\ding{'063}~}
 \falsesymbol{\ding{'067}~}
 \end{lstlisting}
