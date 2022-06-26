@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11155}
+%% \CheckSum{11171}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -422,8 +422,13 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{beamer-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{beamer-xepersian.def}[2022/05/24 v0.1 xepersian changes to beamer class]
+\ProvidesFile{beamer-xepersian.def}[2022/07/25 v0.2 xepersian changes to beamer class]
 \usefonttheme[stillsansserifmath]{serif}
+
+\renewcommand*{\bidi@beamer@today}{%
+\the\persianyear-\ifnum\persianmonth<10\relax0\fi\the\persianmonth-\ifnum\persianday<10\relax0\fi\the\persianday}
+
+
 %    \end{macrocode}
 % \iffalse
 %</beamer-xepersian.def>
@@ -431,24 +436,24 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{beamerbasetranslator-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{beamerbasetranslator-xepersian.def}[2022/06/09 v0.2 xepersian changes to beamerbasetranslator package]
-\newcommand*{\ProvideTranslation}[2]{%
+\ProvidesFile{beamerbasetranslator-xepersian.def}[2022/07/25 v0.3 xepersian changes to beamerbasetranslator package]
+\newcommand*{\ProvidePersianTranslation}[2]{%
   \providetranslation{#1}{\ifRtoL{#2}{#1}}%
 }
 
-\ProvideTranslation{Theorem}{قضیه}
-\ProvideTranslation{Corollary}{نتیجه}
-\ProvideTranslation{Fact}{حقیقت}
-\ProvideTranslation{Lemma}{لما}
-\ProvideTranslation{Problem}{مساله}
-\ProvideTranslation{Solution}{راه‌حل}
-\ProvideTranslation{Definition}{تعریف}
-\ProvideTranslation{Definitions}{تعریف‌ها}
-\ProvideTranslation{Example}{مثال}
-\ProvideTranslation{Examples}{مثال‌ها}
-\ProvideTranslation{Who?}{ارایه‌دهنده}
-\ProvideTranslation{From?}{از}
-\ProvideTranslation{When?}{زمان}
+\ProvidePersianTranslation{Theorem}{قضیه}
+\ProvidePersianTranslation{Corollary}{نتیجه}
+\ProvidePersianTranslation{Fact}{حقیقت}
+\ProvidePersianTranslation{Lemma}{لما}
+\ProvidePersianTranslation{Problem}{مساله}
+\ProvidePersianTranslation{Solution}{راه‌حل}
+\ProvidePersianTranslation{Definition}{تعریف}
+\ProvidePersianTranslation{Definitions}{تعریف‌ها}
+\ProvidePersianTranslation{Example}{مثال}
+\ProvidePersianTranslation{Examples}{مثال‌ها}
+\ProvidePersianTranslation{Who?}{ارایه‌دهنده}
+\ProvidePersianTranslation{From?}{از}
+\ProvidePersianTranslation{When?}{زمان}
 
 
 %    \end{macrocode}
