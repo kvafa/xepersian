@@ -31,7 +31,7 @@ also appear in the Discussions space under the Announcements
 category.
   
   
-Current version release date: 2022/07/25
+Current version release date: 2022/06/27
 ___________________________________________
 Vafa Khalighi
 
@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11171}
+%% \CheckSum{11173}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -422,7 +422,7 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{beamer-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{beamer-xepersian.def}[2022/07/25 v0.2 xepersian changes to beamer class]
+\ProvidesFile{beamer-xepersian.def}[2022/06/27 v0.2 xepersian changes to beamer class]
 \usefonttheme[stillsansserifmath]{serif}
 
 \renewcommand*{\bidi@beamer@today}{%
@@ -436,24 +436,26 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{beamerbasetranslator-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{beamerbasetranslator-xepersian.def}[2022/07/25 v0.3 xepersian changes to beamerbasetranslator package]
+\ProvidesFile{beamerbasetranslator-xepersian.def}[2022/06/27 v0.3 xepersian changes to beamerbasetranslator package]
 \newcommand*{\ProvidePersianTranslation}[2]{%
   \providetranslation{#1}{\ifRtoL{#2}{#1}}%
 }
 
-\ProvidePersianTranslation{Theorem}{قضیه}
 \ProvidePersianTranslation{Corollary}{نتیجه}
-\ProvidePersianTranslation{Fact}{حقیقت}
-\ProvidePersianTranslation{Lemma}{لما}
-\ProvidePersianTranslation{Problem}{مساله}
-\ProvidePersianTranslation{Solution}{راه‌حل}
 \ProvidePersianTranslation{Definition}{تعریف}
 \ProvidePersianTranslation{Definitions}{تعریف‌ها}
 \ProvidePersianTranslation{Example}{مثال}
 \ProvidePersianTranslation{Examples}{مثال‌ها}
-\ProvidePersianTranslation{Who?}{ارایه‌دهنده}
+\ProvidePersianTranslation{Fact}{حقیقت}
 \ProvidePersianTranslation{From?}{از}
+\ProvidePersianTranslation{Lemma}{لما}
+\ProvidePersianTranslation{Problem}{مساله}
+\ProvidePersianTranslation{Section}{قسمت}
+\ProvidePersianTranslation{Solution}{راه‌حل}
+\ProvidePersianTranslation{Subsection}{زیرقسمت}
+\ProvidePersianTranslation{Theorem}{قضیه}
 \ProvidePersianTranslation{When?}{زمان}
+\ProvidePersianTranslation{Who?}{ارایه‌دهنده}
 
 
 %    \end{macrocode}
@@ -3591,7 +3593,7 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
 \def\xepersian@version{24.6}
-\def\xepersiandate{2022/07/25}
+\def\xepersiandate{2022/06/27}
 \ProvidesPackage{xepersian}[\xepersiandate\space v\xepersian@version\space 
 Persian typesetting in XeLaTeX]
 \RequirePackage{fontspec}
@@ -4440,7 +4442,7 @@ Persian typesetting in XeLaTeX]
 
 \newcommand*{\@xepersian@pdfcustomproperties}{%
   This is the xepersian package, Version \xepersian@version,
-  Released July 25, 2022. 
+  Released June 27, 2022. 
 }
 
 \newcommand\twocolumnstableofcontents{%
