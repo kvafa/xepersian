@@ -5,7 +5,7 @@
 %<*readme>
 ____________________
 The XePersian package
-v24.7
+v24.8
 
 The xepersian package provides a convenient interface for 
 typesetting Persian and English texts in LaTeX, using XeTeX 
@@ -31,7 +31,7 @@ also appear in the Discussions space under the Announcements
 category.
   
   
-Current version release date: 2022/07/02
+Current version release date: 2022/10/30
 ___________________________________________
 Vafa Khalighi
 
@@ -168,7 +168,7 @@ by Vafa Khalighi.
 \documentclass{ltxdoc}
 \input{xepersian-doc-preamble.ltx}
 \hypersetup{%
-  pdftitle={Source documentation for version 24.7 of the XePersian
+  pdftitle={Source documentation for version 24.8 of the XePersian
                 package}%
 }
 \EnableCrossrefs
@@ -187,7 +187,7 @@ by Vafa Khalighi.
 % \GetFileInfo{\jobname.dtx}
 % \title{\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}\\
 %\LARGE Persian for \LaTeXe, using {\XeTeX} engine\\[5pt]
-%\large Source documentation for \textcolor{blue!65!black}{version 24.7}}
+%\large Source documentation for \textcolor{blue!65!black}{version 24.8}}
 % \author{Vafa Khalighi\thanks{Thanks to the bidi-tex GitHub organization consisted of David Carlisle and other members of the  {\LaTeX} team to maintain the package in the period 2018--2020.}}
 %\setcounter{page}{0}
 %\thispagestyle{empty}
@@ -197,7 +197,7 @@ by Vafa Khalighi.
 %\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}
 %
 %\Large
-%Source documentation for \textcolor{blue!65!black}{version 24.7}}
+%Source documentation for \textcolor{blue!65!black}{version 24.8}}
 %
 %\vskip 0pt plus 3fill
 %\textit{\large to my Master, \textbf{Ferdowsi The Great}}
@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11173}
+%% \CheckSum{11192}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -2021,7 +2021,7 @@ by Vafa Khalighi.
 %\fi
 % \section{File \texttt{hyperref-xepersian.def}}
 %    \begin{macrocode}
-\ProvidesFile{hyperref-xepersian.def}[2022/06/10 v0.7 xepersian adaptations for hyperref package]
+\ProvidesFile{hyperref-xepersian.def}[2022/10/30 v0.8 xepersian adaptations for hyperref package]
   \def\equationautorefname{\if@RTL معادله\else Equation\fi}%
   \def\footnoteautorefname{\if@RTL زیرنویس\else footnote\fi}%
   \def\itemautorefname{\if@RTL فقره\else item\fi}%
@@ -2051,9 +2051,9 @@ by Vafa Khalighi.
     }%
 \fi
 \pdfstringdefDisableCommands{%
-\let\lr\@firstofone
-\let\rl\@firstofone
-\def\XePersian{XePersian}
+  \let\lr\@firstofone
+  \let\rl\@firstofone
+  \def\XePersian{XePersian}%
 }
 \ltx@IfUndefined{@resets@pp}{%
 }{%
@@ -3592,9 +3592,12 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 % \section{File \texttt{xepersian.sty}}
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
-\def\xepersian@version{24.7}
-\def\xepersiandate{2022/07/02}
-\ProvidesPackage{xepersian}[\xepersiandate\space v\xepersian@version\space 
+\def\xepersian@version{24.8}
+\def\xepersiandate{2022/10/30}
+\def\xepersian@releasename{Women, Life, and Freedom}
+\def\xepersian@persian@@releasename{زن، زندگی، و آزادی}
+\newcommand*{\xepersianreleasename}{\if@RTL\xepersian@persian@@releasename\else\xepersian@releasename\fi}
+\ProvidesPackage{xepersian}[\xepersiandate\space v\xepersian@version\space (Release \xepersian@releasename)\space
 Persian typesetting in XeLaTeX]
 \RequirePackage{fontspec}
 \RequirePackage{xepersian-persiancal}
@@ -3611,7 +3614,7 @@ Persian typesetting in XeLaTeX]
 * Copyright (c) 2008--2022 Vafa Khalighi^^J%
 * Copyright (c) 2018--2020 bidi-tex GitHub Organization^^J%
 * ^^J%
-* v\xepersian@version, \xepersiandate^^J%
+* v\xepersian@version\space (Release \xepersian@releasename), \xepersiandate^^J%
 * ^^J%
 * License: LaTeX Project Public License, version^^J% 
 * 1.3c or higher (your choice)^^J%
@@ -4437,12 +4440,12 @@ Persian typesetting in XeLaTeX]
   \textsf{\XePersian}\quad\@bidi@logo{xepersian-logo.pdf}}}
 
 \renewcommand*{\@bidi@pdfcreator}{%
-  The xepersian package, v\xepersian@version, \xepersiandate
+  The xepersian package, v\xepersian@version\space (Release \xepersian@releasename), \xepersiandate
 }
 
 \newcommand*{\@xepersian@pdfcustomproperties}{%
-  This is the xepersian package, Version \xepersian@version,
-  Released July 2, 2022. 
+  This is the xepersian package, Version \xepersian@version\space (Release \xepersian@releasename),
+  Released October 30, 2022. 
 }
 
 \newcommand\twocolumnstableofcontents{%
