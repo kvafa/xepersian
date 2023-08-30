@@ -5,7 +5,7 @@
 %<*readme>
 ____________________
 The XePersian package
-v24.9
+v25.0
 
 The xepersian package provides a convenient interface for 
 typesetting Persian and English texts in LaTeX, using XeTeX 
@@ -31,7 +31,7 @@ also appear in the Discussions space under the Announcements
 category.
   
   
-Current version release date: 2023/08/27
+Current version release date: 2023/08/30
 ___________________________________________
 Vafa Khalighi
 
@@ -168,7 +168,7 @@ by Vafa Khalighi.
 \documentclass{ltxdoc}
 \input{xepersian-doc-preamble.ltx}
 \hypersetup{%
-  pdftitle={Source documentation for version 24.9 of the XePersian
+  pdftitle={Source documentation for version 25.0 of the XePersian
                 package}%
 }
 \EnableCrossrefs
@@ -187,7 +187,7 @@ by Vafa Khalighi.
 % \GetFileInfo{\jobname.dtx}
 % \title{\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}\\
 %\LARGE Persian for \LaTeXe, using {\XeTeX} engine\\[5pt]
-%\large Source documentation for \textcolor{blue!65!black}{version 24.9}}
+%\large Source documentation for \textcolor{blue!65!black}{version 25.0}}
 % \author{Vafa Khalighi\thanks{Thanks to the bidi-tex GitHub organization consisted of David Carlisle and other members of the  {\LaTeX} team to maintain the package in the period 2018--2020.}}
 %\setcounter{page}{0}
 %\thispagestyle{empty}
@@ -197,7 +197,7 @@ by Vafa Khalighi.
 %\textcolor{blue!65!black}{\Huge The \textsf{\XePersian} \textit{Package}}
 %
 %\Large
-%Source documentation for \textcolor{blue!65!black}{version 24.9}}
+%Source documentation for \textcolor{blue!65!black}{version 25.0}}
 %
 %\vskip 0pt plus 3fill
 %\textit{\large to my Master, \textbf{Ferdowsi The Great}}
@@ -245,7 +245,7 @@ by Vafa Khalighi.
 %\iffalse
 %<*table>
 %\fi
-%% \CheckSum{11274}
+%% \CheckSum{11192}
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -3592,8 +3592,8 @@ U+003E U+003E <> U+00BB ; >> -> RIGHT POINTING GUILLEMET
 % \section{File \texttt{xepersian.sty}}
 %    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}
-\def\xepersian@version{24.9}
-\def\xepersiandate{2023/08/27}
+\def\xepersian@version{25.0}
+\def\xepersiandate{2023/08/30}
 \def\xepersian@releasename{Women, Life, and Freedom}
 \def\xepersian@persian@@releasename{زن، زندگی، و آزادی}
 \newcommand*{\xepersianreleasename}{\if@RTL\xepersian@persian@@releasename\else\xepersian@releasename\fi}
@@ -4445,7 +4445,7 @@ Persian typesetting in XeLaTeX]
 
 \newcommand*{\@xepersian@pdfcustomproperties}{%
   This is the xepersian package, Version \xepersian@version\space (Release \xepersian@releasename),
-  Released August 27, 2023. 
+  Released August 30, 2023. 
 }
 
 \newcommand\twocolumnstableofcontents{%
@@ -4997,126 +4997,6 @@ number is 999,999,999.}%
   \def\xepersian@@latin@baselineskip@scale{#1}%
   }
   
-\newcommand*{\xepersian@setmainpersianfont}[1]{%
-    \settextfont[%
-      Path,%
-      UprightFont=*-Regular,%
-      BoldFont=*-Bold,%
-      BoldItalicFont=*-BoldItalic,%
-      ItalicFont= *-Italic,%
-      SlantedFont=*-Italic,%
-      BoldSlantedFont=*-BoldItalic,%
-      Numbers=Proportional%
-    ]{#1}%
-}
-  
-\define@choicekey{xepersian.sty}{mainpersianfont}[\xepersian@tempa\xepersian@tempb]{Default,Parsian,Naskh,Sans,Mono,Classic}[Default]{%
-  \ifcase\xepersian@tempb\relax
-    \xepersian@setmainpersianfont{ParsianTeX}%
-  \or
-    \xepersian@setmainpersianfont{Parsian}%
-  \or
-    \xepersian@setmainpersianfont{ParsianNaskh}%
-  \or
-    \xepersian@setmainpersianfont{ParsianSans}%
-  \or
-    \xepersian@setmainpersianfont{ParsianMono}%
-  \or
-    \xepersian@setmainpersianfont{ParsianTeXClassic}%
-  \fi}
-  
-\define@choicekey{xepersian.sty}{persiansansfont}[\xepersian@tempa\xepersian@tempb]{on,off}[on]{%
-  \ifcase\xepersian@tempb\relax
-    \setpersiansansfont[%
-      Path,%
-      UprightFont=*-Regular,%
-      BoldFont=*-Bold,%
-      BoldItalicFont=*-BoldItalic,%
-      ItalicFont= *-Italic,%
-      SlantedFont=*-Italic,%
-      BoldSlantedFont=*-BoldItalic,%
-      Numbers=Proportional%
-    ]{ParsianSans}%
-  \or
-    \relax
-  \fi}
-  
-\define@choicekey{xepersian.sty}{persianmonofont}[\xepersian@tempa\xepersian@tempb]{on,off}[on]{%
-  \ifcase\xepersian@tempb\relax
-    \setpersianmonofont[%
-      Path,%
-      UprightFont=*-Regular,%
-      BoldFont=*-Bold,%
-      BoldItalicFont=*-BoldItalic,%
-      ItalicFont= *-Italic,%
-      SlantedFont=*-Italic,%
-      BoldSlantedFont=*-BoldItalic,%
-      Numbers=Proportional%
-    ]{ParsianMono}%
-  \or
-    \relax
-  \fi}
-  
-\newcommand*{\xepersian@setmathdigitfont}[1]{%
-    \setmathdigitfont[%
-      Path,%
-      UprightFont=*-Regular,%
-      BoldFont=*-Bold,%
-      BoldItalicFont=*-BoldItalic,%
-      ItalicFont= *-Italic,%
-      SlantedFont=*-Italic,%
-      BoldSlantedFont=*-BoldItalic,%
-      Numbers=Proportional%
-    ]{#1}%
-}
-  
-\define@choicekey{xepersian.sty}{mathdigitfont}[\xepersian@tempa\xepersian@tempb]{Default,Parsian,Naskh,Sans,Mono,Classic}[Default]{%
-  \ifcase\xepersian@tempb\relax
-    \xepersian@setmathdigitfont{ParsianTeX}%
-  \or
-    \xepersian@setmathdigitfont{Parsian}%
-  \or
-    \xepersian@setmathdigitfont{ParsianNaskh}%
-  \or
-    \xepersian@setmathdigitfont{ParsianSans}%
-  \or
-    \xepersian@setmathdigitfont{ParsianMono}%
-  \or
-    \xepersian@setmathdigitfont{ParsianTeXClassic}%
-  \fi}
-  
-\define@choicekey{xepersian.sty}{mathsansdigitfont}[\xepersian@tempa\xepersian@tempb]{on,off}[on]{%
-  \ifcase\xepersian@tempb\relax
-    \setmathsfdigitfont[%
-      Path,%
-      UprightFont=*-Regular,%
-      BoldFont=*-Bold,%
-      BoldItalicFont=*-BoldItalic,%
-      ItalicFont= *-Italic,%
-      SlantedFont=*-Italic,%
-      BoldSlantedFont=*-BoldItalic,%
-      Numbers=Proportional%
-    ]{ParsianSans}%
-  \or
-    \relax
-  \fi}
-  
-\define@choicekey{xepersian.sty}{mathmonodigitfont}[\xepersian@tempa\xepersian@tempb]{on,off}[on]{%
-  \ifcase\xepersian@tempb\relax
-    \setmathttdigitfont[%
-      Path,%
-      UprightFont=*-Regular,%
-      BoldFont=*-Bold,%
-      BoldItalicFont=*-BoldItalic,%
-      ItalicFont= *-Italic,%
-      SlantedFont=*-Italic,%
-      BoldSlantedFont=*-BoldItalic,%
-      Numbers=Proportional%
-    ]{ParsianMono}%
-  \or
-    \relax
-  \fi}
-  
 \define@choicekey{xepersian.sty}{logo}[\xepersian@tempa\xepersian@tempb]{on,off}[on]{%
   \ifcase\xepersian@tempb\relax
     \AtBeginDocument{\@bidi@inslogo@}%
@@ -5182,9 +5062,7 @@ number is 999,999,999.}%
     latinfontsizescale=\@ne,
     mathfontsizescale=\@ne,
     baselineskipscale=\@ne,
-    latinbaselineskipscale=\@ne,
-    mainpersianfont=Default,
-    mathdigitfont=Default
+    latinbaselineskipscale=\@ne
 }
 
 \ProcessOptionsX
